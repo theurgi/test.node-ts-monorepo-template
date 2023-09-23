@@ -1,0 +1,16 @@
+{
+	"name": "@theurgi-test/test-package-2",
+	"version": "0.0.1",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint": "eslint \"src/**/*.ts*\""
+	},
+	"dependencies": {
+		"@theurgi-test/test-package-1": "workspace:*"
+	},
+	"devDependencies": {
+		"eslint": "^8.50.0"
+	}
+}
