@@ -19,6 +19,10 @@ jobs:
         with:
           enable-cache: 'true'
           project-path: './'
+      
+      # Disable Husky's git hooks from interfering with Changesets' git commit
+      - name: Disable Husky
+        run: echo "HUSKY=false" >> $GITHUB_ENV
 
       - name: Create Release Pull Request and Publish to npm
         id: changesets
