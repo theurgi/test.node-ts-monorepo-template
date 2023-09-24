@@ -1,6 +1,7 @@
 {
 	"name": "@theurgi/test-package-2",
 	"version": "0.0.1",
+	"main": "src/index.ts",
 	"publishConfig": {
 		"access": "public"
 	},
