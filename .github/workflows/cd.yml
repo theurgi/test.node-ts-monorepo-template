@@ -19,12 +19,16 @@ jobs:
         with:
           enable-cache: 'true'
           project-path: './'
-      
+
       # Disable Husky's git hooks from interfering with Changesets' git commit
       - name: Disable Husky
         run: echo "HUSKY=false" >> $GITHUB_ENV
 
-      - name: Create Release Pull Request and Publish to npm
+      - name: Setup .npmrc file
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
